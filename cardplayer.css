@@ -74,7 +74,7 @@ h2{
     color: #fff;
     width: 250px;
     height: 40px;
-    margin-top: 80px;
+    margin-top: 150px;
     margin-left: 700px;
 }
 #card2, #draw2 {
@@ -189,4 +189,27 @@ h2{
     font-size: 15px;
     color: crimson;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#sumOne, #sumTwo, #message2, #message, #sentence {
+    font-size: 20px;
+    color: crimson;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#sumOne {
+    margin-left: 630px;
+    margin-top: -20px;
+}
+#sumTwo {
+    margin-left: 820px;
+}
+#message2 {
+    margin-left: 1000px;
+    margin-top: 80px;
+}
+#message {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+#sentence {
+    margin-left: 700px;
 }

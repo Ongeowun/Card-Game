@@ -16,11 +16,18 @@ const inputtext = document.getElementById("input-text")
 const inputtext2 = document.getElementById("input-text2")
 const enterbutton = document.getElementById("enter")
 const enterbutton1 = document.getElementById("enter1")
-const sum1 = document.getElementById("sumOne")
+let sum1 = document.getElementById("sumOne")
+let sum2 = document.getElementById("sumTwo")
+console.log(sum2)
+let messages = document.getElementById("message")
+let messagePlayer2 = document.getElementById("message2")
+let sentences  = document.getElementById("sentence")
 //const InputNameTwo = document.getElementById("input-button2").value
 
-
-let hasWon = true
+add = 0
+spade = []
+sentence = ""
+let hasWon = false
 let hasNotWon =  false
 //text for the buttons
 enterbutton.textContent = `ENTER`
@@ -34,12 +41,7 @@ startGameTwo.textContent = `START GAME`
 drawCardTwo.textContent= `DRAW MORE CARDS`
 endGameTwo.textContent = `END GAME`
 span.textContent = `Collect Your winnings`
-//let sentencePlayerOne = `${playerOneName} You have lost the Game`
-let sentencePlayerOnewin = `Player One has won the game`
-//let drawMoreCardSentence = `Do you want to draw more cards ${playerOneName}`
 
-//let playerOneName = "Player One"
-//let playerTwoName = "Player Two"
 
 // function for the images
 image = ["Qcards.jpg","cardimage.jpg","Acards.png","card4.jpg","Kcard.jpg","qcard.jpg"]
@@ -55,52 +57,104 @@ function imagesInput(){
 //playerOne.textContent  = `Welcome to the Game ${playerOneName}`
 //playerTwo.textContent = `Welcome to the Game ${playerTwoName}`
 
-//start Game Button for Player 1
-let startGame1 = startGameOne.addEventListener("click", function startOne(){
-  let cardPicked1 = Math.floor(Math.random() * 13) + 1
-  card1.textContent += cardPicked1
-  startGameOne.disabled = true
-  if(cardPicked1 === 1){
-    return 11
-  } if (cardPicked1 > 10 ){
+//Generating Random cards
+function generateRandomCard() {
+  let randomCard = Math.floor(Math.random() * 15) + 1
+  if(randomCard === 1){
+    return 15
+  } if (randomCard > 10 ){
     return 10
   } else{
-    return cardPicked1
+    return randomCard
+  }  
+
+}
+//Messages, 
+function message(){
+  for(let i = 0; i < add.length; i++){
+    sum1 = add[i] + spade
+}
+
+  let Name = document.getElementById("input-button").value
+    if(add === 21){
+         sentence = `${Name} has won the Game`
+         hasWon = true
+    } else if (add < 21){
+       sentence = `${Name} Do you want to draw another card`
+    } else {
+      sentence = `${Name} You are out of the game`
+      sentence2 = `Computer has won the game`
+      hasNotWon = false
+    }
+    
+    messages.textContent = sentence
+    sentences.textContent = sentence2
+}
+function messagePlayerTwo(){
+  for(let i = 0; i < add.length; i++){
+      sum2 = add[i] + spade
   }
 
+  let Name2 = document.getElementById("input-button2").value
+    if(add === 21){
+         sentence = `${Name2} has won the Game`
+         hasWon = true
+    } else if (add < 21){
+       sentence = `${Name2} Do you want to draw another card`
+    } else {
+      sentence = `${Name2} You are out of the game`
+      sentence2 = `Computer has won the game`
+      hasNotWon = false
+      console.log(sentence2)
+    } 
+    messagePlayer2.textContent = sentence
+    sentences.textContent = sentence2
+}
+//start Game Button for Player 1
+startGameOne.addEventListener("click", function startOne(){
+  hasNotWon = true
+  let cardOne =  generateRandomCard()
+  let cardDrawn1 = generateRandomCard()
+  spade = [cardOne, cardDrawn1]
+   add = cardOne + cardDrawn1
+   card1.textContent += `${cardOne} ${cardDrawn1}`
+  startGameOne.disabled = true
 })
 //Start Game button for Player 2
 startGameTwo.addEventListener("click", function startTwo(){
-    let cardPicked2 = Math.floor(Math.random() * 13) + 1
-    card2.textContent += cardPicked2
-    startGameTwo.disabled = true
-    if(cardPicked2 === 1){
-      return 11
-    } if (cardPicked2 > 10 ){
-      return 10
-    } else{
-      return cardPicked2
-    }
+  hasNotWon = true
+  let cardTwo =  generateRandomCard()
+  let cardDrawn2 = generateRandomCard()
+  spade  = [cardTwo, cardDrawn2]
+  add = cardTwo + cardDrawn2
+   card2.textContent += `${cardTwo} ${cardDrawn2}`
+  startGameTwo.disabled = true
+  
   })
   //Draw the Second Card for player 0ne
-  let secondCard = drawCardOne.addEventListener("click", function drawCard1(){
-    sum()
-    let cardDrawn1 = Math.floor(Math.random() * 13) + 1
-    draw1.textContent += cardDrawn1 + " ";
-    
-    //if(startGameOne < 21){
-      //winner.textContent = cardDrawn1 + " "
-    //} else if (startGameOne > 21){
-    //  winner.textContent = `${sentencePlayerOne}`
-    //} else if(startGameOne === 21){
-      //winner.textContent = `${sentencePlayerOnewin}`
-    //}
+  drawCardOne.addEventListener("click", function drawCard1(){
+    if(hasWon === false && hasNotWon === true){
+      let secondCard = generateRandomCard()
+      draw1.textContent += secondCard + " "
+      add += secondCard
+      spade.push(secondCard)
+      sum1.textContent =`Sum: ${add}`
+      message()
+    }
   })
 
 //Draw the Second card for player Two
 drawCardTwo.addEventListener("click", function drawCard2(){
-  let cardDrawn2 = Math.floor(Math.random()*13) + 1
-  draw2.textContent += cardDrawn2 + " "
+  if(hasWon === false && hasNotWon === true){
+    let secondCard2 = generateRandomCard()
+    draw2.textContent += secondCard2 + " "
+    add += secondCard2
+    spade.push(secondCard2)
+    sum2.textContent = `Sum: ${add}`
+    //console.log(spade)
+    messagePlayerTwo()
+  }
+  
 })
 //End game button for player One
 endGameOne.addEventListener("click", function Endbutton1(){
@@ -124,21 +178,22 @@ enterbutton1.addEventListener("click", function welcomeButton2(){
   playerTwo.textContent  = `Welcome to the Game ${Name2}`
     enterbutton1.disabled = true
 })
-//Adding the First card and the second card
-let CardSum1 = [card1.textContent, draw1.textContent]
-console.log(CardSum1)
-function sum(){
-sum1.textContent = `Sum: ${CardSum1[0]} + ${CardSum1[1]}`
-}
-//function for the number f visitors to the site
-function NoofVisits(response) {
-  document.querySelector("#visits").textContent = response.value;
-}
 
-let total = 0, count = 1
+
+//function for the number of visitors to the site
+function noOfVisits(response) {
+  document.querySelector("#visit").textContent = response.value;
+
+  let total = 0, count = 1
 
 while (count <= 10) {
   total += count
   count += 1
+  console.log(total)
 }
-console.log(total)
+
+}
+
+
+
+
