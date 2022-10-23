@@ -18,10 +18,11 @@ const enterbutton = document.getElementById("enter")
 const enterbutton1 = document.getElementById("enter1")
 let sum1 = document.getElementById("sumOne")
 let sum2 = document.getElementById("sumTwo")
-console.log(sum2)
 let messages = document.getElementById("message")
 let messagePlayer2 = document.getElementById("message2")
-let sentences  = document.getElementById("sentence")
+let span  = document.getElementById("span")
+
+
 //const InputNameTwo = document.getElementById("input-button2").value
 
 add = 0
@@ -61,7 +62,7 @@ function imagesInput(){
 function generateRandomCard() {
   let randomCard = Math.floor(Math.random() * 15) + 1
   if(randomCard === 1){
-    return 15
+    return 15 && 1
   } if (randomCard > 10 ){
     return 10
   } else{
@@ -69,12 +70,16 @@ function generateRandomCard() {
   }  
 
 }
+/*function computermessage(){
+  if(sum1 < 21 && sum2 > 21){
+     hasWon = true
+  }
+}*/
 //Messages, 
 function message(){
   for(let i = 0; i < add.length; i++){
     sum1 = add[i] + spade
 }
-
   let Name = document.getElementById("input-button").value
     if(add === 21){
          sentence = `${Name} has won the Game`
@@ -83,12 +88,12 @@ function message(){
        sentence = `${Name} Do you want to draw another card`
     } else {
       sentence = `${Name} You are out of the game`
-      sentence2 = `Computer has won the game`
+      //sentence2 = `Computer has won the game`
       hasNotWon = false
     }
     
     messages.textContent = sentence
-    sentences.textContent = sentence2
+    //sentences.textContent = sentence2
 }
 function messagePlayerTwo(){
   for(let i = 0; i < add.length; i++){
@@ -103,12 +108,12 @@ function messagePlayerTwo(){
        sentence = `${Name2} Do you want to draw another card`
     } else {
       sentence = `${Name2} You are out of the game`
-      sentence2 = `Computer has won the game`
+      //sentence2 = `Computer has won the game`
       hasNotWon = false
-      console.log(sentence2)
+      //console.log(sentence2)
     } 
     messagePlayer2.textContent = sentence
-    sentences.textContent = sentence2
+    //sentences.textContent = sentence2
 }
 //start Game Button for Player 1
 startGameOne.addEventListener("click", function startOne(){
@@ -118,6 +123,7 @@ startGameOne.addEventListener("click", function startOne(){
   spade = [cardOne, cardDrawn1]
    add = cardOne + cardDrawn1
    card1.textContent += `${cardOne} ${cardDrawn1}`
+
   startGameOne.disabled = true
 })
 //Start Game button for Player 2
@@ -139,6 +145,8 @@ startGameTwo.addEventListener("click", function startTwo(){
       add += secondCard
       spade.push(secondCard)
       sum1.textContent =`Sum: ${add}`
+      localStorage.setItem("spade", JSON.stringify(spade))
+      localStorage.getItem("spade")
       message()
     }
   })
@@ -151,7 +159,9 @@ drawCardTwo.addEventListener("click", function drawCard2(){
     add += secondCard2
     spade.push(secondCard2)
     sum2.textContent = `Sum: ${add}`
-    //console.log(spade)
+    //let spade = spade
+    localStorage.setItem("spade2", JSON.stringify(spade))
+    localStorage.getItem("spade2")
     messagePlayerTwo()
   }
   
@@ -189,11 +199,14 @@ function noOfVisits(response) {
 while (count <= 10) {
   total += count
   count += 1
-  console.log(total)
 }
+console.log(count)
 
 }
-
+//Winner
+span.addEventListener("click", function winnerMessage(){
+  window.location.reload()
+})
 
 
 
