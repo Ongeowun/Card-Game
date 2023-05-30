@@ -1,5 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:wght@46");
+
 body{
     background-color: aliceblue;
+}
+@media (min-width: 768px) {
+    main {
+      display: flex;
+      margin-top: .5em;
+      margin-left: 5em;
+      width: 100em;
+      height: 100em;
+    }
 }
 h2{
     font-size: 30px;
@@ -9,19 +20,45 @@ h2{
     color: rgb(209, 179, 7);
     margin-top: 50px;
     margin-left: 650px;
+    position: absolute;
+}
+.name-input{
+    display: inline-block;
+    position: absolute;
+    margin: 2em;
+    margin-left: 5em;
+}
+.welcome2 {
+    position: absolute;
+    width: 20em;
+    display: inline-block;
+    margin-top: -12em;
+}
+#enter1{
+    background-color: goldenrod;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: #fff;
+    width: 150px;
+    height: 35px;
+    margin: 13px;
+    padding: 10px;
+    margin-left: 1330px;
 }
 .play1{
+    position: absolute;
     background-color: #fff;
-    margin-left: 300px;
-    margin-top: 30px;
+    margin-left: 20em;
+    margin-top: 25em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(242, 237, 237, 0.77);
-    border-radius: 30px;
+    border-radius: 2em;
     opacity: 80%;
-    height: 350px;
-    width: 300px;
+    height: 25em;
+    width: 20em;
 }
 #card1{
     margin-left: 100px;
@@ -32,17 +69,18 @@ h2{
     font-weight: bold;
 }
 .play2{
+    position: absolute;
     background-color: #fff;
-    margin-left: 1000px;
-    margin-top: -385px;
+    margin-left: 60em;
+    margin-top: 25em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(242, 237, 237, 0.77);
-    border-radius: 30px;
+    border-radius: 2em;
     opacity: 80%;
-    height: 350px;
-    width: 300px;
+    height: 25em;
+    width: 20em;
 }
 #startgameplayer1, #drawcardsplayer1, #endgameplayer1 {
     background-color: goldenrod;
@@ -67,15 +105,16 @@ h2{
     margin-left: 10px;
 }
 #span{
+    position: absolute;
     background-color: grey;
     font-size: 20px;
     font-weight: bold;
     border-radius: 15px;
     color: #fff;
-    width: 250px;
+    width: 15em;
     height: 40px;
-    margin-top: 150px;
-    margin-left: 700px;
+    margin: 30em;
+    margin-top: 45em;
 }
 #card2, #draw2 {
     font-size: 25px;
@@ -85,17 +124,17 @@ h2{
 }
 #player1{
     font-size: 25px;
-    margin-top: -35px;
+    margin-top: 14em;
     color: crimson;
-    margin-left: 200px;
-    margin-bottom: -10px;
+    margin-left: 3.5em;
+    position: absolute;
 }
 #player2{
-    width: 400px;
+    position: absolute;
     font-size: 25px;
     color: crimson;
-    margin-left: 1050px;
-    margin-top: -30px;
+    margin-left: 53em;
+    margin-top: 14em;
 }
 #draw1 {
     font-size: 25px;
@@ -165,26 +204,9 @@ h2{
     padding: 10px;
     margin-right: 20px;
 }
-#enter1{
-    background-color: goldenrod;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 15px;
-    color: #fff;
-    width: 150px;
-    height: 35px;
-    margin: 13px;
-    padding: 10px;
-    margin-left: 1330px;
-}
-.welcome1 {
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-left: 80px;
-}
-.welcome2 {
-    margin-bottom: -280px;
-}
+
+
+
 #visits, #visit {
     font-size: 15px;
     color: crimson;
