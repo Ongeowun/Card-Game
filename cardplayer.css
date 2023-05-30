@@ -210,8 +210,8 @@ h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #sumOne {
-    margin-left: 630px;
-    margin-top: -20px;
+    margin-left: -20em;
+    margin-top: 40em;
 }
 #sumTwo {
     margin-left: 820px;
