@@ -22,35 +22,42 @@ h2{
     margin-left: 650px;
     position: absolute;
 }
-.name-input{
-    display: inline-block;
+.names{
+    display: flex;
     position: absolute;
-    margin: 2em;
-    margin-left: 5em;
+    margin: 5em;
+    margin-left: 10em;
 }
-.welcome2 {
-    position: absolute;
-    width: 20em;
-    display: inline-block;
-    margin-top: -12em;
+.welcome1 {
+    margin-top: -5em;
 }
+#enter {
+    background-color: goldenrod;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: .8em;
+    color: #fff;
+    width: 8em;
+    padding: .5em;
+    margin-top: 3em;
+}
+
 #enter1{
     background-color: goldenrod;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: .8em;
     color: #fff;
-    width: 150px;
-    height: 35px;
-    margin: 13px;
-    padding: 10px;
-    margin-left: 1330px;
+    width: 8em;
+    padding: .5em;
+    margin-left: 35em;
+    margin-top: 3em;
 }
 .play1{
     position: absolute;
     background-color: #fff;
     margin-left: 20em;
-    margin-top: 25em;
+    margin-top: 22em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(5px);
@@ -72,7 +79,7 @@ h2{
     position: absolute;
     background-color: #fff;
     margin-left: 60em;
-    margin-top: 25em;
+    margin-top: 22em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(5px);
@@ -124,17 +131,18 @@ h2{
 }
 #player1{
     font-size: 25px;
-    margin-top: 14em;
+    margin-top: 12em;
     color: crimson;
-    margin-left: 3.5em;
+    margin-left: 6.5em;
     position: absolute;
 }
 #player2{
     position: absolute;
+    width: 25em;
     font-size: 25px;
     color: crimson;
-    margin-left: 53em;
-    margin-top: 14em;
+    margin-left: 40em;
+    margin-top: 12em;
 }
 #draw1 {
     font-size: 25px;
@@ -152,31 +160,27 @@ h2{
     height: 230px;
     /*position: fixed;*/
 }
-#input-button{
+#username{
     background-color: goldenrod;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: .55em;
     color: #fff;
     width: 250px;
-    height: 20px;
-    margin: 13px;
+    height: 1em;
     padding: 10px;
-    display: inline-block;
+    position: absolute;
 }
-#input-button2{
+#name {
     background-color: goldenrod;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: .55em;
     color: #fff;
     width: 250px;
-    height: 20px;
-    margin: 13px;
-    padding: 10px;
-    position: relative;
-    left: 1200px;
-    display: inline-block;
+    height: 2em;
+    margin-left: 30em;
+    position: absolute;
 }
 #input-text{
     width: 400px;
@@ -186,24 +190,12 @@ h2{
 } 
 #input-text2{
     position: relative;
-    left: 1200px;
-    width: 400px;
+    left: 20em;
     font-size: 25px;
     color: crimson;
 
 }
-#enter {
-    background-color: goldenrod;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 15px;
-    color: #fff;
-    width: 150px;
-    height: 35px;
-    margin: 13px;
-    padding: 10px;
-    margin-right: 20px;
-}
+
 
 
 

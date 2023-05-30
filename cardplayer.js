@@ -102,7 +102,7 @@ function messagePlayerTwo(){
       sum2 = add[i] + spade
   }
 
-  let Name2 = document.getElementById("input-button2").value
+  let Name2 = document.getElementById("username").value
     if(add === 21){
          sentence = `${Name2} has won the Game`
          hasWon = true
@@ -180,13 +180,13 @@ endGameTwo.addEventListener("click", function Endbutton2(){
 })
 //Welcoming message player1 
 enterbutton.addEventListener("click", function welcomeButton1(){
-  let Name = document.getElementById("input-button").value
+  let Name = document.getElementById("username").value
   playerOne.textContent  = `Welcome to the Game ${Name}`
     enterbutton.disabled = true
 })
 //Welcoming message player2
 enterbutton1.addEventListener("click", function welcomeButton2(){
-  let Name2 = document.getElementById("input-button2").value
+  let Name2 = document.getElementById("name").value
   playerTwo.textContent  = `Welcome to the Game ${Name2}`
     enterbutton1.disabled = true
 })
