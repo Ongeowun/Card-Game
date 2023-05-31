@@ -30,6 +30,7 @@ let span  = document.getElementById("span")
 add = 0
 spade = []
 sentence = ""
+let hasPlayed = false
 let hasWon = false
 let hasNotWon =  false
 //text for the buttons
@@ -108,6 +109,7 @@ function messagePlayerTwo(){
          hasWon = true
     } else if (add < 21){
        sentence = `${Name2} Do you want to draw another card`
+       hasPlayed = true
     } else {
       sentence = `${Name2} You are out of the game`
       //sentence2 = `Computer has won the game`
@@ -124,23 +126,26 @@ startGameOne.addEventListener("click", function startOne(){
   let cardDrawn1 = generateRandomCard()
   spade = [cardOne, cardDrawn1]
    add = cardOne + cardDrawn1
-   card1.textContent += `${cardOne} ${cardDrawn1}`
-
+   card1.textContent += `${cardOne}  ${cardDrawn1}`
+  hasPlayed = true
   startGameOne.disabled = true
 })
 //Start Game button for Player 2
 startGameTwo.addEventListener("click", function startTwo(){
-  hasNotWon = true
-  let cardTwo =  generateRandomCard()
-  let cardDrawn2 = generateRandomCard()
-  spade  = [cardTwo, cardDrawn2]
-  add = cardTwo + cardDrawn2
-   card2.textContent += `${cardTwo} ${cardDrawn2}`
-  startGameTwo.disabled = true
-  
+  if(startGameOne === hasPlayed) {
+    hasNotWon = true
+    let cardTwo =  generateRandomCard()
+    let cardDrawn2 = generateRandomCard()
+    spade  = [cardTwo, cardDrawn2]
+    add = cardTwo + cardDrawn2
+     card2.textContent += `${cardTwo} ${cardDrawn2}`
+    startGameTwo.disabled = true
+  }
+  console.log("Clicked Button")
   })
   //Draw the Second Card for player 0ne
   drawCardOne.addEventListener("click", function drawCard1(){
+    
     if(hasWon === false && hasNotWon === true){
       let secondCard = generateRandomCard()
       draw1.textContent += secondCard + " "
@@ -209,6 +214,8 @@ console.log(count)
 span.addEventListener("click", function winnerMessage(){
   window.location.reload()
 })
+
+function playerWithMove(){}
 
 
 
