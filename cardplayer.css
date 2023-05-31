@@ -196,9 +196,6 @@ h2{
 
 }
 
-
-
-
 #visits, #visit {
     font-size: 15px;
     color: crimson;
@@ -210,20 +207,42 @@ h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #sumOne {
-    margin-left: -20em;
+    margin-left: 17em;
     margin-top: 40em;
+    position: absolute;
 }
 #sumTwo {
-    margin-left: 820px;
+    margin-left: 50em;
+    margin-top: 40em;
+    position: absolute;
 }
 #message2 {
-    margin-left: 1000px;
-    margin-top: 80px;
+    margin-left: 50em;
+    margin-top: 42em;
+    position: absolute;
 }
 #message {
-    margin-top: 20px;
-    margin-left: 300px;
+    margin-top: 42em;
+    margin-left: 17em;
+    position: absolute;
 }
 #sentence {
     margin-left: 700px;
+}
+#data-play {
+    position: absolute;
+    margin-left: 15em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 63em;
+}
+#rounds-played, #ties, #player1-wins, #player2-wins {
+    background-color: goldenrod;
+    color: #fff;
+    margin: 1em;
+    width: 15em;
+    font-weight: bolder;
+    font-size: 1.05em;
+    border-radius: .5em;
+    height: 3.5em;
 }

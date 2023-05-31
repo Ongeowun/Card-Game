@@ -51,7 +51,7 @@ image = ["Qcards.jpg","cardimage.jpg","Acards.png","card4.jpg","Kcard.jpg","qcar
 function imagesInput(){
   let img = ""
   for(let i = 0; i < image.length; i++ ){
-    img += `<img alt ="" class="image1" src="${image[i]}"`
+    img += `<img alt ="card player" class="image1" src="${image[i]}"`
   } 
   images.innerHTML = img
 }
@@ -82,7 +82,7 @@ function message(){
   for(let i = 0; i < add.length; i++){
     sum1 = add[i] + spade
 }
-  let Name = document.getElementById("input-button").value
+  let Name = document.getElementById("username").value
     if(add === 21){
          sentence = `${Name} has won the Game`
          hasWon = true
