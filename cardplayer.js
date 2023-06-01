@@ -84,8 +84,9 @@ function message(){
     sum1 = add[i] + spade
 }
   let Name = document.getElementById("username").value
+  let Name2 = document.getElementById("name").value
     if(add === 21){
-         sentence = `${Name} has won the Game`
+      sentence = `${Name} has won the Game`
          hasWon = true
     } else if (add < 21){
        sentence = `${Name} Do you want to draw another card`
@@ -103,7 +104,7 @@ function messagePlayerTwo(){
       sum2 = add[i] + spade
   }
 
-  let Name2 = document.getElementById("username").value
+  let Name2 = document.getElementById("name").value
     if(add === 21){
          sentence = `${Name2} has won the Game`
          hasWon = true
@@ -132,16 +133,17 @@ startGameOne.addEventListener("click", function startOne(){
 })
 //Start Game button for Player 2
 startGameTwo.addEventListener("click", function startTwo(){
-  if(startGameOne === hasPlayed) {
+  if(startGameOne === hasPlayed && hasWon === false) {
     hasNotWon = true
     let cardTwo =  generateRandomCard()
     let cardDrawn2 = generateRandomCard()
     spade  = [cardTwo, cardDrawn2]
     add = cardTwo + cardDrawn2
-     card2.textContent += `${cardTwo} ${cardDrawn2}`
     startGameTwo.disabled = true
+    card2.textContent += `${cardTwo} ${cardDrawn2}`
+  } else{
+    return
   }
-  console.log("Clicked Button")
   })
   //Draw the Second Card for player 0ne
   drawCardOne.addEventListener("click", function drawCard1(){
@@ -214,8 +216,3 @@ console.log(count)
 span.addEventListener("click", function winnerMessage(){
   window.location.reload()
 })
-
-function playerWithMove(){}
-
-
-
