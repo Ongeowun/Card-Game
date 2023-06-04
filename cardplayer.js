@@ -1,28 +1,47 @@
 //Assigning the HTML Elements
+export default class cardPlayer {
+  $ = {}
+  constructor() {  
+    const playerOne  = document.getElementById("player1")
+    const playerTwo = document.getElementById("player2")
+    const startGameOne = document.getElementById("startgameplayer1")
+    const drawCardOne = document.getElementById("drawcardsplayer1")
+    const endGameOne = document.getElementById("endgameplayer1")
+    const card1 = document.getElementById("card1")
+    const startGameTwo = document.getElementById("startgameplayer2")
+    const drawCardTwo = document.getElementById("drawcardsplayer2")
+    const endGameTwo = document.getElementById("endgameplayer2")
+    const card2 = document.getElementById("card2")
+    const winnerOne = document.getElementById("winner")
+    const winnerTwo = document.getElementById("winner2")
+    const images = document.getElementById("images")
+    const inputtext = document.getElementById("input-text")
+    const inputtext2 = document.getElementById("input-text2")
+    const enterbutton = document.getElementById("enter")
+    const enterbutton1 = document.getElementById("enter1")
+    let sum1 = document.getElementById("sumOne")
+    let sum2 = document.getElementById("sumTwo")
+    let messages = document.getElementById("message")
+    let messagePlayer2 = document.getElementById("message2")
+    let span  = document.getElementById("span")
+  }
+
+//Targeting the HTML elements
+  #qs(selector, parent) {
+
+    const el = parent
+    
+    ? parent.querySelector(selector)
+    : document.querySelector(selector)
+  
+    if(!el) throw new Error("Could not find elements")
+  
+    return el 
+   }
+}
 
 
-const playerOne  = document.getElementById("player1")
-const playerTwo = document.getElementById("player2")
-const startGameOne = document.getElementById("startgameplayer1")
-const drawCardOne = document.getElementById("drawcardsplayer1")
-const endGameOne = document.getElementById("endgameplayer1")
-const card1 = document.getElementById("card1")
-const startGameTwo = document.getElementById("startgameplayer2")
-const drawCardTwo = document.getElementById("drawcardsplayer2")
-const endGameTwo = document.getElementById("endgameplayer2")
-const card2 = document.getElementById("card2")
-const winnerOne = document.getElementById("winner")
-const winnerTwo = document.getElementById("winner2")
-const images = document.getElementById("images")
-const inputtext = document.getElementById("input-text")
-const inputtext2 = document.getElementById("input-text2")
-const enterbutton = document.getElementById("enter")
-const enterbutton1 = document.getElementById("enter1")
-let sum1 = document.getElementById("sumOne")
-let sum2 = document.getElementById("sumTwo")
-let messages = document.getElementById("message")
-let messagePlayer2 = document.getElementById("message2")
-let span  = document.getElementById("span")
+
 
 
 //const InputNameTwo = document.getElementById("input-button2").value
@@ -212,3 +231,4 @@ console.log(count)
 span.addEventListener("click", function winnerMessage(){
   window.location.reload()
 })
+
