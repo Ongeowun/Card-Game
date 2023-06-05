@@ -24,22 +24,26 @@
       messages: document.querySelector('[data-id="message"]'),
       messagePlayer2: document.querySelector('[data-id="message2"]'),
       span: document.querySelector('[data-id="span"]'),
+
+      
     },
       //text for the buttons
-        cardPlayer.$.enterbutton.textContent = `ENTER`
-      enterbutton1.innerText = `ENTER`
-      inputtext.innerText = `Player One Enter Your name here`
-      startGameOne.textContent = `START GAME`
-      drawCardOne.textContent= `DRAW MORE CARDS`
-      endGameOne.textContent = `END GAME`
-      inputtext2.textContent = `Player Two Enter Your name here`
-      startGameTwo.textContent = `START GAME`
-      drawCardTwo.textContent= `DRAW MORE CARDS`
-      endGameTwo.textContent = `END GAME`
-      span.textContent = `Collect Your winnings`
-  }
+      
+displayElement(enterbutton, enterbutton1, inputtext, startGameOne){
+  cardPlayer.$.enterbutton.textContent = `ENTER`
+  cardPlayer.$.enterbutton1.innerText = `ENTER`
+  cardPlayer.$.inputtext.innerText = `Player One Enter Your name here`
+  cardPlayer.$.startGameOne.textContent = `START GAME`
+  drawCardOne.textContent= `DRAW MORE CARDS`
+  endGameOne.textContent = `END GAME`
+  inputtext2.textContent = `Player Two Enter Your name here`
+  startGameTwo.textContent = `START GAME`
+  drawCardTwo.textContent= `DRAW MORE CARDS`
+  endGameTwo.textContent = `END GAME`
+  span.textContent = `Collect Your winnings`
+}   
 
-
+}
 
 
 //const InputNameTwo = document.getElementById("input-button2").value
@@ -219,4 +223,4 @@ span.addEventListener("click", function winnerMessage(){
   window.location.reload()
 })
 
-
+window.addEventListener("load")
