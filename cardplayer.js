@@ -1,78 +1,64 @@
 //Assigning the HTML Elements
-export default class cardPlayer {
-  $ = {}
-  constructor() {  
-    this.$.menu = this.#qs('[data-id="menu"]')
-    this.$.playerOne  = this.#qs('[data-id="player1"]')
-    this.$.playerTwo = this.#qs('[data-id="player2"]')
-    this.$.startGameOne = this.#qs('[data-id="startgameplayer1"]')
-    this.$.drawCardOne = this.#qs('[data-id="drawcardsplayer1"]')
-    this.$.endGameOne = this.#qs('[data-id="endgameplayer1"]')
-    this.$.card1 = this.#qs('[data-id="card1"]')
-    this.$.startGameTwo = this.#qs('[data-id="startgameplayer2"]')
-    this.$.drawCardTwo = this.#qs('[data-id="drawcardsplayer2"]')
-    this.$.endGameTwo = this.#qs('[data-id="endgameplayer2"]')
-    this.$.card2 = this.#qs('[data-id="card2"]')
-    this.$.winnerOne = this.#qs('[data-id="winner"]')
-    this.$.winnerTwo = this.#qs('[data-id="winner2"]')
-    this.$.images = this.#qs('[data-id="images"]')
-    this.$.inputtext = this.#qs('[data-id="input-text"]')
-    this.$.inputtext2 = this.#qs('[data-id="input-text2"]')
-    this.$.enterbutton = this.#qs('[data-id="enter"]')
-    this.$.enterbutton1 = this.#qs( '[data-id="enter1"]')
-    this.$.sum1 = this.#qs('[data-id="sumOne"]')
-    this.$.sum2 = this.#qs('[data-id="sumTwo"]')
-    this.$.messages = this.#qs('[data-id="message"]')
-    this.$.messagePlayer2 = this.#qs('[data-id="message2"]')
-    this.$.span  = this.#qs('[data-id="span"]')
+
+  const cardPlayer = {
+    $: {  
+      playerOne: document.querySelector('[data-id="player1"]'),
+      playerTwo: document.querySelector('[data-id="player2"]'),
+      startGameOne: document.querySelector('[data-id="startgameplayer1"]'),
+      drawCardOne: document.querySelector('[data-id="drawcardsplayer1"]'),
+      endGameOne: document.querySelector('[data-id="endgameplayer1"]'),
+      card1: document.querySelector('[data-id="card1"]'),
+      startGameTwo: document.querySelector('[data-id="startgameplayer2"]'),
+      drawCardTwo: document.querySelector('[data-id="drawcardsplayer2"]'),
+      endGameTwo: document.querySelector('[data-id="endgameplayer2"]'),
+      card2: document.querySelector('[data-id="card2"]'),
+      winnerOne: document.querySelector('[data-id="winner"]'),
+      winnerTwo: document.querySelector('[data-id="winner2"]'),
+      images: document.querySelector('[data-id="images"]'),
+      inputtext: document.querySelector('[data-id="input-text"]'),
+      inputtext2: document.querySelector('[data-id="input-text2"]'),
+      enterbutton: document.querySelector('[data-id="enter"]'),
+      enterbutton1: document.querySelector( '[data-id="enter1"]'),
+      sum1: document.querySelector('[data-id="sumOne"]'),
+      sum2: document.querySelector('[data-id="sumTwo"]'),
+      messages: document.querySelector('[data-id="message"]'),
+      messagePlayer2: document.querySelector('[data-id="message2"]'),
+      span: document.querySelector('[data-id="span"]'),
+    },
+      //text for the buttons
+        cardPlayer.$.enterbutton.textContent = `ENTER`
+      enterbutton1.innerText = `ENTER`
+      inputtext.innerText = `Player One Enter Your name here`
+      startGameOne.textContent = `START GAME`
+      drawCardOne.textContent= `DRAW MORE CARDS`
+      endGameOne.textContent = `END GAME`
+      inputtext2.textContent = `Player Two Enter Your name here`
+      startGameTwo.textContent = `START GAME`
+      drawCardTwo.textContent= `DRAW MORE CARDS`
+      endGameTwo.textContent = `END GAME`
+      span.textContent = `Collect Your winnings`
   }
-
-//Targeting the HTML elements
-  #qs(selector, parent) {
-
-    const el = parent
-    
-    ? parent.querySelector(selector)
-    : document.querySelector(selector)
-  
-    if(!el) throw new Error("Could not find elements")
-  
-    return el 
-   }
-}
-
 
 
 
 
 //const InputNameTwo = document.getElementById("input-button2").value
 
-add = 0
-spade = []
-sentence = ""
+let add = 0
+let spade = []
+let sentence = ""
 let hasPlayed = false
 let hasWon = false
 let hasNotWon =  false
-//text for the buttons
-enterbutton.textContent = `ENTER`
-enterbutton1.textContent = `ENTER`
-inputtext.textContent = `Player One Enter Your name here`
-startGameOne.textContent = `START GAME`
-drawCardOne.textContent= `DRAW MORE CARDS`
-endGameOne.textContent = `END GAME`
-inputtext2.textContent = `Player Two Enter Your name here`
-startGameTwo.textContent = `START GAME`
-drawCardTwo.textContent= `DRAW MORE CARDS`
-endGameTwo.textContent = `END GAME`
-span.textContent = `Collect Your winnings`
+
 
 
 // function for the images
-image = ["Qcards.jpg","cardimage.jpg","Acards.png","card4.jpg","Kcard.jpg","qcard.jpg"]
+const images = ["Qcards.jpg","cardimage.jpg","Acards.png","card4.jpg","Kcard.jpg","qcard.jpg"]
 function imagesInput(){
   let img = ""
-  for(let i = 0; i < image.length; i++ ){
-    img += `<img alt ="card player" class="image1" src="${image[i]}"`
+  for(let i = 0; i < images.length; i++ ){
+    img += `<img alt ="card player" class="image1" src="${images[i]}"`
   } 
   images.innerHTML = img
 }
